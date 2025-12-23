@@ -1,29 +1,12 @@
-player.CharacterAdded:Connect(function(char)
-	character = char
-	humanoid = char:WaitForChild("Humanoid")
-	humanoid.WalkSpeed = normalSpeed
-	speedOn = false
-	aimbotOn = false
-	speedBtn.Text = "تشغيل السرعة + ايم بوت"
-end)
-player.CharacterAdded:Connect(function(char)
-	character = char
-	humanoid = char:WaitForChild("Humanoid")
+--[[
+ .____                  ________ ___.    _____                           __                
+ |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
+ |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
+ |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
+ |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
+         \/          \/         \/    \/                \/     \/     \/                   
+          \_Welcome to LuaObfuscator.com   (Alpha 0.10.9) ~  Much Love, Ferib 
 
-	-- لو كانت السرعة مفعلة قبل الموت تبقى مفعلة
-	if speedOn then
-		humanoid.WalkSpeed = fastSpeed
-	end
-end)
--- عنوان الهب
-local title = Instance.new("TextLabel", frame)
-title.Size = UDim2.new(1, -20, 0, 35)
-title.Position = UDim2.new(0, 10, 0, 5)
-title.BackgroundTransparency = 1
-title.Text = "Dark Hub V2 | by Hussein"
-title.TextColor3 = Color3.fromRGB(255, 0, 0)
-title.TextScaled = true
-title.Font = Enum.Font.GothamBold
+]]--
 
-hideBtn.Position = UDim2.new(0, 10, 0, 45)
-speedBtn.Position = UDim2.new(0, 20, 0, 90)
+local v0=game:GetService("Players");local v1=game:GetService("RunService");local v2=game:GetService("StarterGui");local v3=v0.LocalPlayer;local v4=v3.Character or v3.CharacterAdded:Wait() ;local v5=v4:WaitForChild("Humanoid");local v6=workspace.CurrentCamera;local v7=Instance.new("ScreenGui",v3.PlayerGui);v7.ResetOnSpawn=false;local v9=Instance.new("Frame",v7);v9.Size=UDim2.new(209 -(133 + 76) ,1975 -(1594 + 61) ,1661 -(108 + 1553) ,733 -(232 + 281) );v9.Position=UDim2.new(1253.5 -(976 + 277) , -160,957.5 -(892 + 65) , -(262 -152));v9.BackgroundColor3=Color3.fromRGB(55 -25 ,30,55 -25 );v9.Active=true;v9.Draggable=true;Instance.new("UICorner",v9).CornerRadius=UDim.new(350 -(87 + 263) ,192 -(67 + 113) );local v16=Instance.new("TextButton",v9);v16.Size=UDim2.new(0,40,0 + 0 ,98 -58 );v16.Position=UDim2.new(1 + 0 , -45,0 -0 ,5);v16.Text="X";v16.BackgroundColor3=Color3.fromRGB(150,0,952 -(802 + 150) );v16.TextColor3=Color3.new(2 -1 ,1 -0 ,1 + 0 );local v22=Instance.new("TextButton",v9);v22.Size=UDim2.new(997 -(915 + 82) ,283 -183 ,0 + 0 ,46 -11 );v22.Position=UDim2.new(1187 -(1069 + 118) ,10,0,5);v22.Text="إخفاء";local v26=Instance.new("TextButton",v9);v26.Size=UDim2.new(0 -0 ,280,0 -0 ,9 + 41 );v26.Position=UDim2.new(0 -0 ,20,0 + 0 ,851 -(368 + 423) );v26.Text="تشغيل السرعة + ايم بوت";v26.BackgroundColor3=Color3.fromRGB(139,0 -0 ,0);v26.TextColor3=Color3.new(19 -(10 + 8) ,3 -2 ,1);local v32=458 -(416 + 26) ;local v33=159 -109 ;local v34=false;local v35=false;v16.MouseButton1Click:Connect(function() v7:Destroy();end);local v36=false;v22.MouseButton1Click:Connect(function() v36= not v36;v9.Visible= not v36;end);local function v37(v41) v2:SetCore("SendNotification",{Title="إشعار",Text=v41,Duration=2 + 1 });end v0.PlayerAdded:Connect(function(v42) v37("دخل اللاعب: "   .. v42.Name );end);v0.PlayerRemoving:Connect(function(v43) v37("خرج اللاعب: "   .. v43.Name );end);local function v38(v44) if (v44==v3) then return;end v44.CharacterAdded:Connect(function(v53) local v54=0 -0 ;local v55;while true do if (v54==(439 -(145 + 293))) then v55.Color3=Color3.new(431 -(44 + 386) ,0,1486 -(998 + 488) );v55.Transparency=0.5;v54=1 + 1 ;end if (v54==(3 + 0)) then v55.Parent=v7;break;end if (v54==(772 -(201 + 571))) then v55=Instance.new("BoxHandleAdornment");v55.Size=Vector3.new(1142 -(116 + 1022) ,24 -18 ,2 + 0 );v54=3 -2 ;end if (v54==(7 -5)) then v55.AlwaysOnTop=true;v55.Adornee=v53:WaitForChild("HumanoidRootPart");v54=862 -(814 + 45) ;end end end);end for v45,v46 in pairs(v0:GetPlayers()) do v38(v46);end v0.PlayerAdded:Connect(v38);local function v39() local v47,v48=nil,math.huge;for v56,v57 in pairs(v0:GetPlayers()) do if ((v57~=v3) and v57.Character and v57.Character:FindFirstChild("Head")) then local v60,v61=v6:WorldToViewportPoint(v57.Character.Head.Position);if v61 then local v68=0 -0 ;local v69;while true do if (v68==0) then v69=(Vector2.new(v60.X,v60.Y) -Vector2.new(v6.ViewportSize.X/(1 + 1) ,v6.ViewportSize.Y/(1 + 1) )).Magnitude;if (v69<v48) then local v78=0;while true do if (v78==(885 -(261 + 624))) then v48=v69;v47=v57;break;end end end break;end end end end end return v47;end v26.MouseButton1Click:Connect(function() local v49=0 -0 ;while true do if ((1081 -(1020 + 60))==v49) then if v34 then local v70=1423 -(630 + 793) ;while true do if (v70==0) then v5.WalkSpeed=v33;v26.Text="إيقاف السرعة";break;end end else local v71=0;while true do if (v71==(0 -0)) then v5.WalkSpeed=v32;v26.Text="تشغيل السرعة + ايم بوت";break;end end end break;end if (v49==(0 -0)) then v34= not v34;v35=v34;v49=1 + 0 ;end end end);v1.RenderStepped:Connect(function() if v35 then local v58=0;local v59;while true do if ((0 -0)==v58) then v59=v39();if (v59 and v59.Character and v59.Character:FindFirstChild("Head")) then v6.CFrame=CFrame.new(v6.CFrame.Position,v59.Character.Head.Position);end break;end end end end);v3.CharacterAdded:Connect(function(v50) v4=v50;v5=v50:WaitForChild("Humanoid");v5.WalkSpeed=v32;v34=false;v35=false;v26.Text="تشغيل السرعة + ايم بوت";end);
