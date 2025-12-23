@@ -1,12 +1,29 @@
---[[
- .____                  ________ ___.    _____                           __                
- |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
- |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
- |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
- |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
-         \/          \/         \/    \/                \/     \/     \/                   
-          \_Welcome to LuaObfuscator.com   (Alpha 0.10.9) ~  Much Love, Ferib 
+player.CharacterAdded:Connect(function(char)
+	character = char
+	humanoid = char:WaitForChild("Humanoid")
+	humanoid.WalkSpeed = normalSpeed
+	speedOn = false
+	aimbotOn = false
+	speedBtn.Text = "تشغيل السرعة + ايم بوت"
+end)
+player.CharacterAdded:Connect(function(char)
+	character = char
+	humanoid = char:WaitForChild("Humanoid")
 
-]]--
+	-- لو كانت السرعة مفعلة قبل الموت تبقى مفعلة
+	if speedOn then
+		humanoid.WalkSpeed = fastSpeed
+	end
+end)
+-- عنوان الهب
+local title = Instance.new("TextLabel", frame)
+title.Size = UDim2.new(1, -20, 0, 35)
+title.Position = UDim2.new(0, 10, 0, 5)
+title.BackgroundTransparency = 1
+title.Text = "Dark Hub V2 | by Hussein"
+title.TextColor3 = Color3.fromRGB(255, 0, 0)
+title.TextScaled = true
+title.Font = Enum.Font.GothamBold
 
-player.CharacterAdded:Connect(function(v11) local v12=1637 -(1523 + 114) ;while true do if (v12==(1 + 0)) then humanoid.WalkSpeed=normalSpeed;speedOn=false;v12=2 -0 ;end if ((4 -2)==v12) then aimbotOn=false;speedBtn.Text="تشغيل السرعة + ايم بوت";break;end if (v12==(1065 -(68 + 997))) then character=v11;humanoid=v11:WaitForChild("Humanoid");v12=1271 -(226 + 1044) ;end end end);player.CharacterAdded:Connect(function(v13) character=v13;humanoid=v13:WaitForChild("Humanoid");if speedOn then humanoid.WalkSpeed=fastSpeed;end end);local v0=Instance.new("TextLabel",frame);v0.Size=UDim2.new(1 + 0 , -(79 -59),0 -0 ,152 -(32 + 85) );v0.Position=UDim2.new(0 + 0 ,10,0 + 0 ,5);v0.BackgroundTransparency=958 -(892 + 65) ;v0.Text="Dark Hub V2 | by Hussein";v0.TextColor3=Color3.fromRGB(608 -353 ,0,0 + 0 );v0.TextScaled=true;v0.Font=Enum.Font.GothamBold;hideBtn.Position=UDim2.new(0 -0 ,13 -3 ,0 -0 ,1232 -(1069 + 118) );speedBtn.Position=UDim2.new(0,20,350 -(87 + 263) ,270 -(67 + 113) );
+hideBtn.Position = UDim2.new(0, 10, 0, 45)
+speedBtn.Position = UDim2.new(0, 20, 0, 90)
